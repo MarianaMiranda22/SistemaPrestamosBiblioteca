@@ -1,64 +1,104 @@
 package com.example.sistemaprestamosbiblioteca;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 /**
- * A simple {@link Fragment} subclass.
- * Use the {@link InventarioFragment#newInstance} factory method to
- * create an instance of this fragment.
+ * Fragment encargado de gestionar el inventario de libros.
+ * Permite agregar libros y guardarlos en Firebase Realtime Database.
  */
 public class InventarioFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private DatabaseReference databaseReference;
+    private RecyclerView recyclerView;
+    private Button btnAgregar;
 
     public InventarioFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment InventarioFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static InventarioFragment newInstance(String param1, String param2) {
-        InventarioFragment fragment = new InventarioFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+        // Constructor vacío requerido
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_inventario, container, false);
+
+        View view = inflater.inflate(R.layout.fragment_inventario, container, false);
+
+        // Referencia al nodo "inventario" en Firebase
+        databaseReference = FirebaseDatabase.getInstance().getReference("inventario");
+
+        // Vincular elementos del XML
+        recyclerView = view.findViewById(R.id.recyclerInventario);
+        btnAgregar = view.findViewById(R.id.btnAgregar);
+
+        // Configurar RecyclerView
+        recyclerView.setLayoutManager(new LinearLayoutManager(requireContext()));
+
+        // Evento botón Agregar
+        btnAgregar.setOnClickListener(v -> mostrarDialogoAgregar());
+
+        return view;
+    }
+
+    /**
+     * Muestra un diálogo para ingresar nombre y autor del libro.
+     */
+    private void mostrarDialogoAgregar() {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
+        builder.setTitle("Agregar Libro");
+
+        View dialogView = LayoutInflater.from(requireContext())
+                .inflate(R.layout.dialog_agregar_libro, null);
+
+        EditText etNombre = dialogView.findViewById(R.id.etNombre);
+        EditText etAutor = dialogView.findViewById(R.id.etAutor);
+
+        builder.setView(dialogView);
+
+        builder.setPositiveButton("Guardar", (dialog, which) -> {
+
+            String nombre = etNombre.getText().toString().trim();
+            String autor = etAutor.getText().toString().trim();
+
+            if (!nombre.isEmpty() && !autor.isEmpty()) {
+
+                // Generar ID único
+                String id = databaseReference.push().getKey();
+
+                // Crear objeto Libro
+                Libro libro = new Libro(id, nombre, autor);
+
+                // Guardar en Firebase
+                databaseReference.child(id).setValue(libro);
+
+                Toast.makeText(requireContext(),
+                        "Libro agregado correctamente",
+                        Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(requireContext(),
+                        "Complete todos los campos",
+                        Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        builder.setNegativeButton("Cancelar", null);
+
+        builder.show();
     }
 }
