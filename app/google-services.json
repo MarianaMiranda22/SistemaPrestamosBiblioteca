@@ -1,15 +1,16 @@
 {
   "project_info": {
     "project_number": "763937377118",
+    "firebase_url": "https://sistemaprestamosbiblioteca-default-rtdb.firebaseio.com",
     "project_id": "sistemaprestamosbiblioteca",
     "storage_bucket": "sistemaprestamosbiblioteca.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:763937377118:android:831b710d088c03566a9dcf",
+        "mobilesdk_app_id": "1:763937377118:android:0308945218ce64726a9dcf",
         "android_client_info": {
-          "package_name": "AndroidManifest.xml"
+          "package_name": "com.example.sistemaprestamosbiblioteca"
         }
       },
       "oauth_client": [],
