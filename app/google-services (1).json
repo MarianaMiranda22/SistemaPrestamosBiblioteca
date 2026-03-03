@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "763937377118",
+    "project_id": "sistemaprestamosbiblioteca",
+    "storage_bucket": "sistemaprestamosbiblioteca.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:763937377118:android:831b710d088c03566a9dcf",
+        "android_client_info": {
+          "package_name": "AndroidManifest.xml"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBcln0ub_l2eO6EVOi3SijEXc_yVPqHdoQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
