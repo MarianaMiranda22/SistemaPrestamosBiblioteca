@@ -18,17 +18,17 @@ public class MainActivity extends AppCompatActivity {
 
         bottomNavigationView = findViewById(R.id.bottom_navigation);
 
-        // Cargar fragment inicial
+        // Fragmento inicial
         loadFragment(new InicioFragment());
 
         bottomNavigationView.setOnItemSelectedListener(item -> {
-
             Fragment selectedFragment = null;
 
             if (item.getItemId() == R.id.nav_inicio) {
                 selectedFragment = new InicioFragment();
             } else if (item.getItemId() == R.id.nav_prestamos) {
                 selectedFragment = new PrestamosFragment();
+            } else if (item.getItemId() == R.id.nav_inventario) {
                 selectedFragment = new InventarioFragment();
             }
 
