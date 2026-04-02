@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="brand_green">#0B6F3E</color>
+    <color name="card_border">#E6ECE9</color>
+    <color name="chip_gray_bg">#9AA7A1</color>
+    <color name="chip_green_bg">#EAF7EF</color>
+    <color name="chip_orange_bg">#FFF1E2</color>
+    <color name="chip_orange_fg">#B36B00</color>
+    <color name="danger_red">#D64545</color>
+    <color name="muted_text">#6B7C74</color>
+    <color name="nav_unselected">#7C8B84</color>
+    <color name="soft_bg">#F5F7F6</color>
+    <string name="app_name">Sistema de Préstamos</string>
+    <string name="nav_home">Inicio</string>
+    <string name="nav_inventory">Inventario</string>
+    <string name="nav_loans">Préstamos</string>
+    <string name="nav_reports">Reportes</string>
+    <style name="Theme.SistemaPrestamos" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/brand_green</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="android:statusBarColor">@color/brand_green</item>
+        <item name="android:navigationBarColor">@android:color/white</item>
+    </style>
+</resources>

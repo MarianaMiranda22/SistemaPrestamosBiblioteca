@@ -1,5 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">SistemaPrestamosBiblioteca</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="app_name">Sistema de Préstamos</string>
+
+    <string name="nav_home">Inicio</string>
+    <string name="nav_loans">Préstamos</string>
+    <string name="nav_inventory">Inventario</string>
+    <string name="nav_reports">Reportes</string>
 </resources>

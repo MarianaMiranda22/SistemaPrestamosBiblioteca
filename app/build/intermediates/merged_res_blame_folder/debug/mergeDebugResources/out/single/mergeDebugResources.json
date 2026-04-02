@@ -1,0 +1,42 @@
+[
+    {
+        "merged": "com.example.sistemaprestamos.app-debug-31:/layout_view_screen_header.xml.flat",
+        "source": "com.example.sistemaprestamos.app-main-33:/layout/view_screen_header.xml"
+    },
+    {
+        "merged": "com.example.sistemaprestamos.app-debug-31:/layout_fragment_home.xml.flat",
+        "source": "com.example.sistemaprestamos.app-main-33:/layout/fragment_home.xml"
+    },
+    {
+        "merged": "com.example.sistemaprestamos.app-debug-31:/menu_bottom_nav_menu.xml.flat",
+        "source": "com.example.sistemaprestamos.app-main-33:/menu/bottom_nav_menu.xml"
+    },
+    {
+        "merged": "com.example.sistemaprestamos.app-debug-31:/layout_fragment_inventory.xml.flat",
+        "source": "com.example.sistemaprestamos.app-main-33:/layout/fragment_inventory.xml"
+    },
+    {
+        "merged": "com.example.sistemaprestamos.app-debug-31:/layout_activity_main.xml.flat",
+        "source": "com.example.sistemaprestamos.app-main-33:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.sistemaprestamos.app-debug-31:/layout_fragment_reports.xml.flat",
+        "source": "com.example.sistemaprestamos.app-main-33:/layout/fragment_reports.xml"
+    },
+    {
+        "merged": "com.example.sistemaprestamos.app-debug-31:/layout_view_topbar.xml.flat",
+        "source": "com.example.sistemaprestamos.app-main-33:/layout/view_topbar.xml"
+    },
+    {
+        "merged": "com.example.sistemaprestamos.app-debug-31:/layout_item_inventory.xml.flat",
+        "source": "com.example.sistemaprestamos.app-main-33:/layout/item_inventory.xml"
+    },
+    {
+        "merged": "com.example.sistemaprestamos.app-debug-31:/layout_fragment_loans.xml.flat",
+        "source": "com.example.sistemaprestamos.app-main-33:/layout/fragment_loans.xml"
+    },
+    {
+        "merged": "com.example.sistemaprestamos.app-debug-31:/color_bottom_nav_item_colors.xml.flat",
+        "source": "com.example.sistemaprestamos.app-main-33:/color/bottom_nav_item_colors.xml"
+    }
+]
