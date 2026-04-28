@@ -23,8 +23,15 @@ public class Libro {
     }
 
     // ===============================
-    // CONSTRUCTOR CON DATOS
+    // CONSTRUCTORES CON DATOS
     // ===============================
+
+    public Libro(String id, String nombre, String autor) {
+        this.id = id;
+        this.nombre = nombre;
+        this.autor = autor;
+        this.disponible = true; // Por defecto, un libro nuevo está disponible
+    }
 
     public Libro(String id, String nombre, String autor, boolean disponible) {
         this.id = id;
